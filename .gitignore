@@ -182,3 +182,4 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/windows,android,androidstudio
+.idea/kotlinc.xml
