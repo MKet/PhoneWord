@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PhoneWorld</string>
+    <string name="callHistory">Bel-geschiedenis</string>
+
+    <string name="FillWordInstruction">Vul een woord in</string>
+
+    <string name="TranslateButtonText">vertaal</string>
+
+    <string name="CallButtonText">Bel</string>
 </resources>

@@ -1,18 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="phone.phoneworld.MainActivity">
-
+    tools:context="phone.phoneworld.MainActivity"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
     <TextView
-        android:layout_width="wrap_content"
+        android:text="@string/FillWordInstruction"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textView1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PhoneNumberText"
+        android:text="" />
+    <Button
+        android:text="@string/TranslateButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/VertaalKnop" />
+    <Button
+        android:text="@string/CallButtonText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/BelKnop" />
+    <Button
+        android:text="@string/callHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/HistoyButton"
+        android:enabled="false" />
+</LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
