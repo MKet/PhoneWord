@@ -33,5 +33,16 @@ public class MainActivity extends AppCompatActivity {
         callButton.setEnabled(false);
 
 
+        translateButton.setOnClickListener(v -> {
+            PhoneNumberTranslator translator = new PhoneNumberTranslator();
+            String translatedNumber = translator.ToNumber(numberText.getText().toString());
+            if (!translatedNumber.matches("[-[0-9][A-Z]]+")) {
+                callButton.setText(getString(R.string.CallButtonText));
+                callButton.setEnabled(false);
+            } else {
+                callButton.setText(getString(R.string.CallButtonTextWithNumber, translatedNumber));
+                callButton.setEnabled(true);
+            }
+        });
     }
 }
