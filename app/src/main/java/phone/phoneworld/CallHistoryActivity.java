@@ -21,7 +21,7 @@ public class CallHistoryActivity extends ListActivity {
         if (bundle != null) {
             ArrayList<String> phoneNumbers = bundle.getStringArrayList("phone_numbers");
             if (phoneNumbers != null)
-                this.setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, phoneNumbers));
+                this.setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, phoneNumbers));
         }
     }
 
