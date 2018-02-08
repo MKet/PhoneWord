@@ -44,5 +44,56 @@ public class MainActivity extends AppCompatActivity {
                 callButton.setEnabled(true);
             }
         });
+
+        callButton.setOnClickListener(v -> {
+            // On "Call" button click, try to dial phone number.
+            PhoneNumberTranslator translator = new PhoneNumberTranslator();
+            String translatedNumber = translator.ToNumber(numberText.getText().toString());
+            AlertDialog.Builder callDialog = new AlertDialog.Builder(this);
+            callDialog.setMessage("Call " + translatedNumber + "?");
+            callDialog.setNeutralButton("Call", (e, i) -> {
+                // add dialed number to list of called numbers.
+                phoneNumbers.add(translatedNumber);
+                // enable the Call History button
+                callHistoryButton.setEnabled(true);
+
+                // Create intent to dial phone
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(android.net.Uri.parse("tel:" + translatedNumber));
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    String[] PERMISSIONS = {Manifest.permission.CALL_PHONE};
+                    ActivityCompat.requestPermissions(this, PERMISSIONS, REQUEST_PHONE_CALL);
+                    return;
+                }
+                startActivity(callIntent);
+            });
+            callDialog.setNegativeButton("Cancel", (n, i) -> {
+            });
+
+            // Show the alert dialog to the user and wait for response.
+            callDialog.show();
+        });
+
+        callHistoryButton.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CallHistoryActivity.class);
+            intent.putStringArrayListExtra("phone_numbers", phoneNumbers);
+            startActivity(intent);
+        });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PHONE_CALL: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+918511812660"));
+                    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        return;
+                    }
+                    startActivity(intent);
+                }
+            }
+        }
     }
 }
