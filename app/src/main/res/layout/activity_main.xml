@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="phone.phoneworld.MainActivity"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <TextView
-        android:text="@string/FillWordInstruction"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/PhoneNumberText"
-        android:text="" />
-    <Button
-        android:text="@string/TranslateButtonText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/VertaalKnop" />
-    <Button
-        android:text="@string/CallButtonText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/BelKnop" />
-    <Button
-        android:text="@string/callHistory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/HistoyButton"
-        android:enabled="false" />
-</LinearLayout>
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        tools:context="phone.phoneworld.MainActivity"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:text="@string/FillWordInstruction"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/PhoneNumberText"
+            android:text="" />
+        <Button
+            android:text="@string/TranslateButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TranslateButton" />
+        <Button
+            android:text="@string/CallButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/CallButton" />
+        <Button
+            android:text="@string/callHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/HistoyButton"
+            android:enabled="false" />
+    </LinearLayout>
+</layout>

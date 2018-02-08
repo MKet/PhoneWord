@@ -7,4 +7,6 @@
     <string name="TranslateButtonText">vertaal</string>
 
     <string name="CallButtonText">Bel</string>
+    <string name="CallButtonTextWithNumber">Bel %s</string>
+    <string name="title_activity_call_history">CallHistoryActivity</string>
 </resources>
