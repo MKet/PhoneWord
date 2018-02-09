@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         translateButton.setOnClickListener(v -> {
             PhoneNumberTranslator translator = new PhoneNumberTranslator();
             String translatedNumber = translator.ToNumber(numberText.getText().toString());
+
             if (!translatedNumber.matches("[-[0-9][A-Z]]+")) {
                 callButton.setText(getString(R.string.CallButtonText));
                 callButton.setEnabled(false);
@@ -49,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
             // On "Call" button click, try to dial phone number.
             PhoneNumberTranslator translator = new PhoneNumberTranslator();
             String translatedNumber = translator.ToNumber(numberText.getText().toString());
+
             AlertDialog.Builder callDialog = new AlertDialog.Builder(this);
-            callDialog.setMessage("Call " + translatedNumber + "?");
-            callDialog.setNeutralButton("Call", (e, i) -> {
+            callDialog.setMessage(getString(R.string.callDialog_message, translatedNumber));
+            callDialog.setNeutralButton(getString(R.string.callDialog_NeutralButton), (e, i) -> {
                 // add dialed number to list of called numbers.
                 phoneNumbers.add(translatedNumber);
                 // enable the Call History button
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 startActivity(callIntent);
             });
-            callDialog.setNegativeButton("Cancel", (n, i) -> {
+            callDialog.setNegativeButton(getString(R.string.callDialog_NegativeButtonText), (n, i) -> {
             });
 
             // Show the alert dialog to the user and wait for response.
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
+                                           @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case REQUEST_PHONE_CALL: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
