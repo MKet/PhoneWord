@@ -1,16 +1,18 @@
 <resources>
     <string name="app_name">PhoneWorld</string>
-    <string name="callHistory">Bel-geschiedenis</string>
+    <string name="history_filename">history.json</string>
+    <string name="FillWordInstruction">Fill in a word</string>
 
-    <string name="FillWordInstruction">Vul een woord in</string>
+    <string name="TranslateButtonText">translate</string>
 
-    <string name="TranslateButtonText">vertaal</string>
+    <string name="CallHistory">Call history</string>
+    <string name="CallButtonText">Call</string>
+    <string name="CallButtonTextWithNumber">Call %s</string>
 
-    <string name="CallButtonText">Bel</string>
-    <string name="CallButtonTextWithNumber">Bel %s</string>
     <string name="title_activity_call_history">CallHistoryActivity</string>
+    <string name="callDialog_message">"Call %s?</string>
+    <string name="callDialog_NegativeButtonText">Cancel</string>
+    <string name="callDialog_NeutralButton">Call</string>
 
-    <string name="callDialog_message">"%s bellen?</string>
-    <string name="callDialog_NegativeButtonText">Annuleren</string>
-    <string name="callDialog_NeutralButton">Bellen</string>
+    <string name="phoneNumberListExtra">phoneNumbers</string>
 </resources>

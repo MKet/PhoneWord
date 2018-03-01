@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="callHistory">Bel-geschiedenis</string>
+
+    <string name="FillWordInstruction">Vul een woord in</string>
+
+    <string name="TranslateButtonText">vertaal</string>
+
+    <string name="CallButtonText">Bel</string>
+    <string name="CallButtonTextWithNumber">Bel %s</string>
+
+    <string name="callDialog_message">"%s bellen?</string>
+    <string name="callDialog_NegativeButtonText">Annuleren</string>
+    <string name="callDialog_NeutralButton">Bellen</string>
+</resources>
