@@ -24,8 +24,7 @@ public class PhoneNumberTranslator {
         return newNumber.toString();
     }
 
-    private char TranslateToNumber(char c)
-    {
+    private char TranslateToNumber(char c) {
         if ("ABC".indexOf(c) > -1)
             return '2';
         else if ("DEF".indexOf(c) > -1)
